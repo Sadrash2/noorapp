@@ -1,0 +1,225 @@
+import colors from "./colors";
+
+
+const style = `
+
+	/*
+	This CSS resource incorporates links to font software which is the valuable copyrighted
+	property of Monotype Imaging and/or its suppliers. You may not attempt to copy, install,
+	redistribute, convert, modify or reverse engineer this font software. Please contact Monotype
+	Imaging with any questions regarding Web app/app/fonts:  http://www.app/app/fonts.com
+	*/
+
+	@font-face{
+		font-family:"Avenir Next W01_n1";
+		src:url("app/assets/fonts/linotype/17c55b27-e9ab-43cd-b948-d49f97480d68.eot?#iefix") format("eot")
+	}
+	@font-face{
+		font-family:"Avenir Next W01";
+		src:url("app/assets/fonts/linotype/17c55b27-e9ab-43cd-b948-d49f97480d68.eot?#iefix");
+		src:url("app/assets/fonts/linotype/17c55b27-e9ab-43cd-b948-d49f97480d68.eot?#iefix") format("eot"),url("app/assets/fonts/linotype/2e3f5cb9-101f-46cf-a7b3-dfaa58261e03.woff2") format("woff2"),url("app/assets/fonts/linotype/fa19948e-5e38-4909-b31e-41acd170d6f2.woff") format("woff"),url("app/assets/fonts/linotype/6de0ce4d-9278-467b-b96f-c1f5f0a4c375.ttf") format("truetype"),url("app/assets/fonts/linotype/9fd4ea0c-b19a-4b21-9fdf-37045707dd78.svg#9fd4ea0c-b19a-4b21-9fdf-37045707dd78") format("svg");
+		font-weight: 100;
+		font-style: normal;
+	}
+	@font-face{
+		font-family:"Avenir Next W01_n3";
+		src:url("app/assets/fonts/linotype/42c793cf-df5a-4e07-bf3e-37de54df02b6.eot?#iefix") format("eot")
+	}
+	@font-face{
+		font-family:"Avenir Next W01";
+		src:url("app/assets/fonts/linotype/42c793cf-df5a-4e07-bf3e-37de54df02b6.eot?#iefix");
+		src:url("app/assets/fonts/linotype/42c793cf-df5a-4e07-bf3e-37de54df02b6.eot?#iefix") format("eot"),url("app/assets/fonts/linotype/64779e28-a3b8-4364-949c-771372a0a327.woff2") format("woff2"),url("app/assets/fonts/linotype/c6c8e4be-17eb-4475-bbfc-bb485ffde766.woff") format("woff"),url("app/assets/fonts/linotype/87a872d0-5af3-4231-a77c-37f41ec74662.ttf") format("truetype"),url("app/assets/fonts/linotype/91464696-717b-4eaa-adbd-0dfc5e5fd782.svg#91464696-717b-4eaa-adbd-0dfc5e5fd782") format("svg");
+		font-weight: 300;
+		font-style: normal;
+	}
+	@font-face{
+		font-family:"Avenir Next W01_n4";
+		src:url("app/assets/fonts/linotype/0ecef829-586e-426d-a633-4c8a8c926769.eot?#iefix") format("eot")
+	}
+	@font-face{
+		font-family:"Avenir Next W01";
+		src:url("app/assets/fonts/linotype/0ecef829-586e-426d-a633-4c8a8c926769.eot?#iefix");
+		src:url("app/assets/fonts/linotype/0ecef829-586e-426d-a633-4c8a8c926769.eot?#iefix") format("eot"),url("app/assets/fonts/linotype/49c5f3e1-5867-4b1d-a843-2d07fa60d85d.woff2") format("woff2"),url("app/assets/fonts/linotype/f401df6f-54eb-406c-b46a-90b9451c598d.woff") format("woff"),url("app/assets/fonts/linotype/276fe25e-e430-4376-b33c-705dd77b3dba.ttf") format("truetype"),url("app/assets/fonts/linotype/869dc33b-3685-4d74-a51c-82b435579093.svg#869dc33b-3685-4d74-a51c-82b435579093") format("svg");
+		font-weight: 400;
+		font-style: normal;
+	}
+	@font-face{
+		font-family:"Avenir Next W01_n5";
+		src:url("app/assets/fonts/linotype/e9167238-3b3f-4813-a04a-a384394eed42.eot?#iefix") format("eot")
+	}
+	@font-face{
+		font-family:"Avenir Next W01";
+		src:url("app/assets/fonts/linotype/e9167238-3b3f-4813-a04a-a384394eed42.eot?#iefix");
+		src:url("app/assets/fonts/linotype/e9167238-3b3f-4813-a04a-a384394eed42.eot?#iefix") format("eot"),url("app/assets/fonts/linotype/2cd55546-ec00-4af9-aeca-4a3cd186da53.woff2") format("woff2"),url("app/assets/fonts/linotype/1e9892c0-6927-4412-9874-1b82801ba47a.woff") format("woff"),url("app/assets/fonts/linotype/46cf1067-688d-4aab-b0f7-bd942af6efd8.ttf") format("truetype"),url("app/assets/fonts/linotype/52a192b1-bea5-4b48-879f-107f009b666f.svg#52a192b1-bea5-4b48-879f-107f009b666f") format("svg");
+		font-weight: 500;
+		font-style: normal;
+	}
+	@font-face{
+		font-family:"Avenir Next W01_i5";
+		src:url("app/assets/fonts/linotype/d1fddef1-d940-4904-8f6c-17e809462301.eot?#iefix") format("eot")
+	}
+	@font-face{
+		font-family:"Avenir Next W01";
+		src:url("app/assets/fonts/linotype/d1fddef1-d940-4904-8f6c-17e809462301.eot?#iefix");
+		src:url("app/assets/fonts/linotype/d1fddef1-d940-4904-8f6c-17e809462301.eot?#iefix") format("eot"),url("app/assets/fonts/linotype/7377dbe6-f11a-4a05-b33c-bc8ce1f60f84.woff2") format("woff2"),url("app/assets/fonts/linotype/92b66dbd-4201-4ac2-a605-4d4ffc8705cc.woff") format("woff"),url("app/assets/fonts/linotype/18839597-afa8-4f0b-9abb-4a30262d0da8.ttf") format("truetype"),url("app/assets/fonts/linotype/1de7e6f4-9d4d-47e7-ab23-7d5cf10ab585.svg#1de7e6f4-9d4d-47e7-ab23-7d5cf10ab585") format("svg");
+		font-weight: 500;
+		font-style: italic;
+	}
+	@font-face{
+		font-family:"Avenir Next W01_n7";
+		src:url("app/assets/fonts/linotype/12d643f2-3899-49d5-a85b-ff430f5fad15.eot?#iefix") format("eot")
+	}
+	@font-face{
+		font-family:"Avenir Next W01";
+		src:url("app/assets/fonts/linotype/12d643f2-3899-49d5-a85b-ff430f5fad15.eot?#iefix");
+		src:url("app/assets/fonts/linotype/12d643f2-3899-49d5-a85b-ff430f5fad15.eot?#iefix") format("eot"),url("app/assets/fonts/linotype/aad99a1f-7917-4dd6-bbb5-b07cedbff64f.woff2") format("woff2"),url("app/assets/fonts/linotype/91b50bbb-9aa1-4d54-9159-ec6f19d14a7c.woff") format("woff"),url("app/assets/fonts/linotype/a0f4c2f9-8a42-4786-ad00-fce42b57b148.ttf") format("truetype"),url("app/assets/fonts/linotype/99affa9a-a5e9-4559-bd07-20cf0071852d.svg#99affa9a-a5e9-4559-bd07-20cf0071852d") format("svg");
+		font-weight: 700;
+		font-style: normal;
+	}
+	@font-face{
+		font-family:"Avenir Next W01_n8";
+		src:url("app/assets/fonts/linotype/dccb10af-07a2-404c-bfc7-7750e2716bc1.eot?#iefix") format("eot")
+	}
+	@font-face{
+		font-family:"Avenir Next W01";
+		src:url("app/assets/fonts/linotype/dccb10af-07a2-404c-bfc7-7750e2716bc1.eot?#iefix");
+		src:url("app/assets/fonts/linotype/dccb10af-07a2-404c-bfc7-7750e2716bc1.eot?#iefix") format("eot"),url("app/assets/fonts/linotype/14c73713-e4df-4dba-933b-057feeac8dd1.woff2") format("woff2"),url("app/assets/fonts/linotype/b8e906a1-f5e8-4bf1-8e80-82c646ca4d5f.woff") format("woff"),url("app/assets/fonts/linotype/890bd988-5306-43ff-bd4b-922bc5ebdeb4.ttf") format("truetype"),url("app/assets/fonts/linotype/ed104d8c-7f39-4e8b-90a9-4076be06b857.svg#ed104d8c-7f39-4e8b-90a9-4076be06b857") format("svg");
+		font-weight: 800;
+		font-style: normal;
+	}
+	@font-face{
+		font-family:"Avenir Next W01_n9";
+		src:url("app/assets/fonts/linotype/3418f6be-70a5-4c26-af1d-c09a8642ca20.eot?#iefix") format("eot")
+	}
+	@font-face{
+		font-family:"Avenir Next W01";
+		src:url("app/assets/fonts/linotype/3418f6be-70a5-4c26-af1d-c09a8642ca20.eot?#iefix");
+		src:url("app/assets/fonts/linotype/3418f6be-70a5-4c26-af1d-c09a8642ca20.eot?#iefix") format("eot"),url("app/assets/fonts/linotype/5c57b2e2-f641-421e-a95f-65fcb47e409a.woff2") format("woff2"),url("app/assets/fonts/linotype/181c847e-cdbc-43d5-ae14-03a81c8953b4.woff") format("woff"),url("app/assets/fonts/linotype/045d1654-97f2-4ff0-9d24-21ba9dfee219.ttf") format("truetype"),url("app/assets/fonts/linotype/3c111f4f-c9f7-45d4-b35f-4f4ed018842f.svg#3c111f4f-c9f7-45d4-b35f-4f4ed018842f") format("svg");
+		font-weight: 900;
+		font-style: normal;
+	}
+	@font-face{
+		font-family:"Neue Frutiger 1450 W01_n3";
+		src:url("app/assets/fonts/linotype/50916a44-f75a-4899-a2d7-8eb295aa1a31.eot?#iefix") format("eot")
+	}
+	@font-face{
+		font-family:"Neue Frutiger 1450 W01";
+		src:url("app/assets/fonts/linotype/50916a44-f75a-4899-a2d7-8eb295aa1a31.eot?#iefix");
+		src:url("app/assets/fonts/linotype/50916a44-f75a-4899-a2d7-8eb295aa1a31.eot?#iefix") format("eot"),url("app/assets/fonts/linotype/e4097b66-5adf-4833-9213-9d8b028563ad.woff2") format("woff2"),url("app/assets/fonts/linotype/a6b552ae-1fb4-45a0-a050-7f2d4150daaa.woff") format("woff"),url("app/assets/fonts/linotype/5dd1d144-09ba-4e25-9dec-860be76a8058.ttf") format("truetype"),url("app/assets/fonts/linotype/9ee8ecfd-626d-48d7-95a7-aee9df485ebf.svg#9ee8ecfd-626d-48d7-95a7-aee9df485ebf") format("svg");
+		font-weight: 300;
+		font-style: normal;
+	}
+	@font-face{
+		font-family:"Neue Frutiger 1450 W01_i3";
+		src:url("app/assets/fonts/linotype/bc190df9-b4b4-4d6f-a5ff-41ecee6c59d5.eot?#iefix") format("eot")
+	}
+	@font-face{
+		font-family:"Neue Frutiger 1450 W01";
+		src:url("app/assets/fonts/linotype/bc190df9-b4b4-4d6f-a5ff-41ecee6c59d5.eot?#iefix");
+		src:url("app/assets/fonts/linotype/bc190df9-b4b4-4d6f-a5ff-41ecee6c59d5.eot?#iefix") format("eot"),url("app/assets/fonts/linotype/6d943752-5651-4357-bc52-f1d5786a298e.woff2") format("woff2"),url("app/assets/fonts/linotype/09b5c0b9-09e6-42da-8e2d-d94553c7d123.woff") format("woff"),url("app/assets/fonts/linotype/a5463dca-97c1-40c4-b019-af139f163b63.ttf") format("truetype"),url("app/assets/fonts/linotype/965aeec8-ef7e-4d78-82e4-c2fd2c6fdf6f.svg#965aeec8-ef7e-4d78-82e4-c2fd2c6fdf6f") format("svg");
+		font-weight: 300;
+		font-style: italic;
+	}
+	@font-face{
+		font-family:"Neue Frutiger 1450 W01_n6";
+		src:url("app/assets/fonts/linotype/c8a20b71-14c8-46c5-9b1b-275234bb9708.eot?#iefix") format("eot")
+	}
+	@font-face{
+		font-family:"Neue Frutiger 1450 W01";
+		src:url("app/assets/fonts/linotype/c8a20b71-14c8-46c5-9b1b-275234bb9708.eot?#iefix");
+		src:url("app/assets/fonts/linotype/c8a20b71-14c8-46c5-9b1b-275234bb9708.eot?#iefix") format("eot"),url("app/assets/fonts/linotype/ba1b311d-52d6-432b-ab3d-49c8c5b788d9.woff2") format("woff2"),url("app/assets/fonts/linotype/8034a6c8-42bc-43aa-ae1e-fb3c542c4075.woff") format("woff"),url("app/assets/fonts/linotype/50bae5db-3321-43fe-8798-8e1c1d82698f.ttf") format("truetype"),url("app/assets/fonts/linotype/026c8363-4a01-4a25-bf0d-5811fe585511.svg#026c8363-4a01-4a25-bf0d-5811fe585511") format("svg");
+		font-weight: 600;
+		font-style: normal;
+	}
+
+	html {
+		font-size: 10px;
+		overflow-x: hidden;
+	}
+	*, body {
+		box-sizing: border-box;
+		padding: 0;
+		margin: 0;
+	}
+
+	body {
+		font-family:"Neue Frutiger 1450 W01",Helvetica,Arial,sans-serif;
+		font-size: 1.6rem;
+		font-weight: 300;
+		line-height: 23px;
+		color: ${colors.dirtText};
+		background-color: ${colors.dirtWhite};
+	}
+
+	h1, h2, h3, h4, h5, h6, h7 {
+		font-family: "Avenir Next W01",Helvetica,Arial,sans-serif;
+		font-weight: 300;
+	}
+
+	a {
+		color: ${colors.orange};
+		text-decoration: none;
+	}
+	a:hover {
+		color: ${colors.orangesnd};
+	}
+
+	&, #react-root, html, body {
+		height: 100%;
+	}
+
+	div#OnePager {
+		padding: 0;
+	}
+
+	p.break {
+		padding-top: 22px;
+	}
+
+	button, .button {
+		background-color: ${colors.buttonBackground};
+		border-radius: 3px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 8px 12px;
+		font-family: "Avenir Next W01", 'Open sans';
+		border: 2px solid ${colors.dirtText};
+		margin-top: 10px;
+		color: ${colors.dirtText};
+		font-weight: 500;
+		text-decoration: none;
+	}
+
+	button.purple, .button.purple {
+		background-color: ${colors.purple};
+		color: white;
+		box-shadow: 0 2px 0 0 #252040;
+		border: 0;
+	}
+
+	
+
+	@media (min-width: 992px) {
+		#discover, #features > div, #features .quran-content > *, #mosquefinder > div, .container {
+			padding: 0 8%;
+		}	
+	}
+
+	@media (min-width: 1106px) {
+		#discover, #features > div, #features .quran-content > *, #mosquefinder > div, .container {
+			padding: 0 12%;
+		}
+	}
+
+	@media (min-width: 1506px) {
+		#discover, #features > div, #features .quran-content > *, #mosquefinder > div, .container {
+			padding: 0 19%;
+		}
+	}
+	
+
+
+`;
+
+export default style;

@@ -1,0 +1,303 @@
+import React from "react";
+import Router from "react-router";
+import lang from "../languages/lang";
+import InlineCss from "react-inline-css";
+import colors from "../scss/colors";
+import ReactSwipe from "react-swipe";
+import styleFunctions from "../scss/styleFunctions";
+import {Link} from "react-router";
+
+class Questions extends React.Component {
+
+	constructor() {
+		super();
+
+		this.state = {
+			formSubmitted: false,
+			errorMessage: "",
+			questions: [
+				{question: "Lorem ipsum?", answer: "Yes but lorem ipsum lorem ipsum", expanded: false},
+				{question: "Lorem ipsum?", answer: "Yes but lorem ipsum lorem ipsum", expanded: false},
+				{question: "Lorem ipsum?", answer: "Yes but lorem ipsum lorem ipsum", expanded: false},
+				{question: "Lorem ipsum?", answer: "Yes but lorem ipsum lorem ipsum", expanded: false}
+			]
+		};
+
+		
+	}
+
+
+	_handleClick(index) {
+		this.state.questions[index].expanded = !this.state.questions[index].expanded;
+		this.forceUpdate();
+
+	}
+
+
+	handleSubmit() {
+		const email = this.refs.emailInput.value;
+		const name = this.refs.nameInput.value;
+		const question = this.refs.questionInput.value;
+
+		if(email && name && question) {
+			this.setState({
+				errorMessage: "",
+				formSubmitted: true
+			});
+		} else {
+			this.setState({
+				errorMessage: "You need to fill out all fields"
+			});
+		}
+
+	}
+
+	render() {
+
+		const error = this.state.errorMessage ? this.state.errorMessage : "";
+
+		const theForm = this.state.formSubmitted ? (
+			<div className="o-questions-right">
+				We will respond to your mail as soon as we can!
+			</div>
+			) : (
+			<div className="o-questions-right">
+				<div className="c-question-input-email">
+					<div className="c-input-heading">Your Email address</div>
+					<input type="text" ref="emailInput" />
+				</div>
+
+				<div className="c-questions-input-name">
+					<div className="c-input-heading">Enter your Name</div>
+					<input type="text" ref="nameInput" />
+				</div>
+
+				<div className="c-questions-input-message">
+					<div className="c-input-heading">Describe your question</div>
+					<textarea ref="questionInput" />
+				</div>
+
+				<div>{error}</div>
+
+				<div className="c-questions-input-submit" onClick={this.handleSubmit.bind(this)}>
+					<div className="c-questions-submit-button">ASK US</div>
+				</div>
+			</div>
+		);
+
+		return (
+			<InlineCss namespace="questions" stylesheet={Questions.css(this.props.arabic)}>
+				<div className="o-contact-form">
+					
+					<div className="o-the-form o-questions-container">
+						<div className="o-questions-left">
+
+							<div className="o-intro-text">
+								<h2>Do you have feedback, suggestions or any kind of wishes we might fulfill?</h2>
+								<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy erimod</p>
+							</div>
+
+						</div>
+
+						{theForm}
+						
+					</div>
+				</div>
+
+				<div className="o-faq-container o-questions-container">
+
+
+					<h2>FAQ</h2>
+					<div className="o-faqs">
+						{this.state.questions.map((question, index) => {
+
+							let answerClass = question.expanded ? "question-answer active" : "question-answer";
+
+							return (
+								<div className="c-question" key={"question-"+index}>
+									<div className="c-question-header" onClick={this._handleClick.bind(this, index)}>
+<<<<<<< HEAD
+										{question.question}
+=======
+										{c-question.c-question}
+>>>>>>> 1a1e35381911021bef5572b2944df41aad7ffe94
+									</div>
+									<div className={o-answerClass}>
+										{c-question.answer}
+									</div>
+								</div>
+							);
+						})}
+					</div>
+				</div>
+
+			</InlineCss>
+		);
+	}
+
+
+	static css(arabicToggle) {
+
+		const responsiveSocialMedia = styleFunctions.responsivePadding("#feedback .social-media");
+		const responsiveContactForm = styleFunctions.responsivePadding("#feedback .o-contact-form");
+
+
+		const base = `
+
+
+			& {
+				padding-top: 66px;
+				background-color: white;
+			}
+
+			div#react-root {
+				background-color: white;
+			}
+
+			& .c-question-header {
+				border: 1px solid #CCC0AE;
+				height: 42px;
+				padding: 10px 5px 0 5px;
+			}
+
+			& .c-question {
+				margin-bottom: 20px;
+			}
+
+			& .c-question .question-answer {
+				display: none;
+			}
+
+			& .c-question .question-answer.active {
+				display: block;
+			}
+
+			& .question-answer {
+				border: 1px solid #CCC0AE;
+				border-top: 0;
+				padding: 10px 5px 10px 5px;
+			}
+
+			 .o-contact-form {
+				background-color: ${colors.dirtWhite};
+				padding: 32px 23px;
+			}
+
+			 .o-contact-form h2 {
+			 	font-size: 3.2rem;
+			 	line-height: 41px;
+			 	font-weight: 100;
+				color: ${colors.orange};
+				margin-bottom: 23px;
+			}
+
+			 .o-contact-form p {
+			 	font-size: 2.0rem;
+			 	line-height: 26px;
+			 	font-weight: 300;
+				margin-bottom: 30px;
+			}
+
+			.c-input-heading {
+				font-weight: 500;
+				font-size: 1.4rem;
+				margin-bottom: 6px;
+			}
+
+			.o-contact-form input[type=text] {
+				height: 40px;
+				background-color: rgba(255,255,255,0.33);
+				border: 1px solid white;
+				width: 100%;
+				font-size: 14px;
+				padding: 0 10px;
+				border-radius: 2px;
+			}
+
+			.o-contact-form .c-questions-input-message textarea {
+				width: 100%;
+				border: 1px solid white;
+				background-color: rgba(255,255,255,0.66);
+				min-height: 140px;
+				font-size: 14px;
+				padding: 10px;
+			}
+
+			.c-questions-input-email, #feedback .c-questions-input-name {
+				margin-bottom: 15px;
+			}
+
+			.c-questions-input-submit {
+				background-color: ${colors.orange};
+				height: 40px;
+				border-radius: 5px;
+				box-shadow: 0 2px 0 0 #A6581F;
+				margin-top: 10px;
+				text-align: center;
+				padding-top: 10px;
+				color: white;
+			}
+
+			.o-faq-container {
+				padding-top: 64px !important;
+				padding-bottom: 64px !important;
+				border-bottom: 1px solid ${colors.dirtWhite};
+			}
+
+			.o-faq-container h2 {
+				padding-bottom: 32px;
+			}
+
+			@media (min-width: 768px) {
+
+
+				.o-contact-form .o-the-form {
+					display: flex;
+					padding-top: 40px;
+					padding-bottom: 40px;
+				}
+
+				.o-contact-form .o-the-form .o-questions-left {
+					flex: 0.4;
+					margin-right: 80px;
+				}
+
+				.o-contact-form .o-the-form .o-questions-right {
+					flex: 0.6;
+					display: flex;
+					flex-wrap: wrap;
+				}
+
+				.o-contact-form .c-questions-input-email {
+					flex-shrink: 1;
+					flex-basis: 45%;
+					margin-right: 5%;
+
+				}
+
+				.o-contact-form .c-questions-input-name {
+					flex-shrink: 1;
+					flex-basis: 45%;
+				}
+
+				.c-questions-input-message {
+					flex-basis: 100%;
+				}
+
+				.c-questions-input-submit {
+					flex-basis: 20%;
+					margin-left: auto;
+				}
+			}
+
+
+		`;
+
+		const arabic = ``;
+
+		return arabicToggle ? base + arabic : base;
+	}
+
+};
+
+export default Questions;
